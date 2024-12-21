@@ -1,89 +1,956 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.1.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon/imageLogoShop.png" type="image/gif" sizes="16x16">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <link href="css/tailwind.css" type="text/css" rel="stylesheet">
+  <script src="js/home.js" type="text/javascript" async></script>
+</head>
+
+<body>
+  <div id="root">
+    <div class="flex border-b border-gray-300 text-black max-w-screen-2xl	text-base mx-auto">
+      <span class="ml-auto mr-4">
+        <!-- <a href="" class="">Đăng nhập</a> | <a href="" class="">Đăng xuất</a> -->
+        Xin chào, <a href="" class="">Bui Van Thiet</a> | <a href="" class="">Đăng xuất</a>
+      </span>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <div class="content-warapper max-w-screen-2xl	text-base mx-auto px-2 flex flex-col min-h-screen">
+      <header class="py-6 mx-auto w-full">
+        <nav class="flex flex-row justify-between items-center relative">
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+          <div class="logo basis-2/6 text-start text-xl font-semibold cursor-pointer ms-[60px]">
+            98 Sneakers
+          </div>
+
+          <ul id="98-shop-top-menu"
+            class="basis-3/6 hidden lg:flex lg:items-center lg:justify-start lg:gap-8 uppercase text-sm text-gray-500 font-medium">
+            <li class="top-menu-item-custom top-menu-item-custom-active">
+              <a href="" class="">Trang chủ</a>
+            </li>
+            <li class="top-menu-item-custom">
+              <a href="" class="">Sản phẩm</a>
+            </li>
+            <li class="top-menu-item-custom">
+              <a href="" class="">Tin tức - sự kiện</a>
+            </li>
+            <li class="top-menu-item-custom">
+              <a href="" class="">Liên hệ</a>
+            </li>
+          </ul>
+
+          <ul
+            class="basis-3/6 lg:basis-1/6 flex justify-center items-center ml-6 uppercase text-sm text-gray-500 font-medium">
+            <li class="top-menu-item-custom"><a href="" class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                  class="icon-card-custom">
+                  <path fill-rule="evenodd"
+                    d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 0 0 4.25 22.5h15.5a1.875 1.875 0 0 0 1.865-2.071l-1.263-12a1.875 1.875 0 0 0-1.865-1.679H16.5V6a4.5 4.5 0 1 0-9 0ZM12 3a3 3 0 0 0-3 3v.75h6V6a3 3 0 0 0-3-3Zm-3 8.25a3 3 0 1 0 6 0v-.75a.75.75 0 0 1 1.5 0v.75a4.5 4.5 0 1 1-9 0v-.75a.75.75 0 0 1 1.5 0v.75Z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span class="mx-2">Giỏ hàng</span>
+                <span class="badge-circle-custom bg-black text-white">10</span>
+              </a></li>
+          </ul>
+
+          <div class="lg:hidden basis-1/6 text-center cursor-pointer px-2 sm:px-4">
+            <svg id="98-select-top-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="icon-card-custom">
+              <path fill-rule="evenodd"
+                d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
+                clip-rule="evenodd" />
+            </svg>
+          </div>
+
+        </nav>
+      </header>
+      <!-- het thanh menu  -->
+      <main class="flex-grow">
+        <div class="slider h-[530px] bg-center bg-slider-bg bg-cover bg-no-repeat">
+          <div class="w-full h-full flex justify-start items-center bg-gray-900 bg-opacity-30">
+            <div class=" mx-16 text-white">
+              <div class="uppercase mb-6 font-medium text-4xl text-start">
+                Giày thể thao - Giày Công Sở - Thương hiệu <br>98.Sneakers
+              </div>
+              <div class="">
+                <button
+                  class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group">
+                  <span
+                    class="absolute inset-0 bg-yellow-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000"></span>
+                  <span class="relative z-10">Sản phẩm</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bvt-subheadline-custome">
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+          <div class="bvt-subheadline-label">
+            Sản phẩm hot nhất
+          </div>
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+        </div>
+
+        <div class="product-store w-[90%] mx-auto">
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4">
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 1</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 2</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 3</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <br>
+        <div class="bvt-subheadline-custome">
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+          <div class="bvt-subheadline-label">
+            Sản phẩm mới nhất
+          </div>
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+        </div>
+
+        <div class="new-product w-[90%] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4">
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 1</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 2</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 3</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 4</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 5</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 6</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 7</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 8</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="bvt-subheadline-custome">
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+          <div class="bvt-subheadline-label">
+            Sản phẩm bán chạy nhất
+          </div>
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+        </div>
+
+        <div class="product-sell-wel w-[90%] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4">
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 1</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 2</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 3</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[70%] w-full bg-[url('/img/product/IMG_7777.png')] duration-500 hover:bg-[url('/img/product/IMG_7778.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+                    <div
+                      class="absolute w-[100px] bg-white py-2 px-4 top-3 right-3 text-center font-semibold text-red-600">
+                      on sale
+                    </div>
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Sản phẩm</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl mb-3 hover:text-red-700">Sản phẩm 4</div>
+                </a>
+                <div class="bvt-price">
+                  <span class="text-lg text-red-500">10,000,000 VNĐ</span>
+                  <span class="ml-2 line-through text-gray-600">100,000,000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="bvt-subheadline-custome">
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+          <div class="bvt-subheadline-label">
+            Quà tặng khi mua sắm
+          </div>
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+        </div>
+
+        <div class="product-sell-wel w-[90%] mx-auto">
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            <div class="image-gift basis-1/2 md:flex md:flex-row gap-5 w-full h-full mb-5 md:mb-0">
+              <!-- Phần ảnh sản phẩm -->
+              <div
+                class="h-[380px] w-full basis-2/3 bg-[url('/img/product/IMG_7777.png')] bg-cover bg-no-repeat bg-center">
+              </div>
+              <div class="basis-1/3 mt-5 md:mt-0 flex flex-row md:flex-col gap-5">
+                <div class="h-[180px] basis-1/2 bg-[url('/img/product/quatang1.png')] bg-cover bg-no-repeat bg-center">
+
+                </div>
+                <div class="h-[180px] basis-1/2 bg-[url('/img/product/quatang2.png')] bg-cover bg-no-repeat bg-center">
+
+                </div>
+              </div>
+            </div>
+            <div class="content-gift basis-1/2 pl-8 xl:pl-14 text-center md:text-left">
+              <div class="text-sm text-gray-500 mb-1">
+                Siêu ưu đãi khi mua hàng
+              </div>
+              <div class="uppercase text-2xl font-bold mb-3">
+                Nhận quà tặng khi mua sản phẩm
+              </div>
+              <div class="mb-5">
+                Mua sản phẩm bất kỳ trong của hàng để có được quà tặng cực xịn.
+              </div>
+              <div class="">
+                <div class="">
+                  <button
+                    class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-gray-200 rounded-none group">
+                    <span
+                      class="absolute inset-0 bg-yellow-400 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-1000"></span>
+                    <span class="relative z-10">Bắt đầu mua sắm</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-5 bvt-parallax-section bg-[url('/img/banner/banner2.png')] bg-cover bg-no-repeat bg-center h-[340px] bg-fixed w-[100vw] relative left-[calc(-50vw+50%)]">
+
+        </div>
+
+        <div class="bvt-subheadline-custome">
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+          <div class="bvt-subheadline-label">
+            Tin nổi bậy
+          </div>
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+        </div>
+
+        <div class="product-store w-[90%] mx-auto">
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-4">
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div class="h-[70%] w-full bg-[url('/img/banner/story1.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Xem chi tiết</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl text-start">QUÀ TẶNG LỊCH ĐỂ BÀN CHO MỌI ĐƠN HÀNG TẠI ĐÔNG HẢI</div>
+                  <div class="text-sm text-start mt-3 text-gray-500">Chuẩn bị bước sang tháng 12 - tháng cuối năm với
+                    loạt sản phẩm mới nhất dành cho gia đình và phù hợp để diện trong các buổi tiệc, ngày hội. Đông
+                    Hả...</div>
+
+                </a>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div class="h-[70%] w-full bg-[url('/img/banner/story2.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Xem chi tiết</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl text-start">TẶNG LY GIỮ NHIỆT CAO CẤP TIỆN DỤNG HÀNG NGÀY</div>
+                  <div class="text-sm text-start mt-3 text-gray-500">Tháng 11 - tháng của lời tri ân thầy cô, ngoài các
+                    sản phẩm đa dạng phù hợp để thầy cô vững bước trên bục giảng thì Đông Hải còn gửi đến chương trì...
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="bvt-product-card h-[600px] flex flex-col items-center">
+              <!-- Phần ảnh sản phẩm -->
+              <div class="h-[70%] w-full bg-[url('/img/banner/story3.png')] bg-cover bg-no-repeat bg-center">
+                <a href="" alt="san pham mua">
+                  <div
+                    class="w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-1000 relative group">
+
+                    <div class="absolute w-full bottom-4 flex justify-center">
+                      <button
+                        class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white rounded-none group w-11/12 hidden group-hover:block group-hover:animate-fadeIn">
+                        <span class="relative z-10">Xem chi tiết</span>
+                      </button>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Thông tin sản phẩm -->
+              <div class="text-center mt-8">
+                <a href="" alt="san pham chi tiet">
+                  <div class="text-xl text-start">CÓ ĐÔI CÓ CẶP, ĐỒNG HÀNH CÓ NHAU</div>
+                  <div class="text-sm text-start mt-3 text-gray-500">"Có Đôi Có Cặp" mang nhiều cung bậc cảm xúc đặc
+                    biệt, thôi thúc mọi người nhớ về những khoảnh khắc vui vẻ, đồng hành cùng nhau. Không gì hạnh phúc
+                    ...
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="bvt-subheadline-custome">
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+          <div class="bvt-subheadline-label">
+            Liên hệ
+          </div>
+          <div class="bvt-subheadline-deco-line">
+
+          </div>
+        </div>
+        <div class="question-for-shop h-[500px] text-white flex pt-10 items-center flex-col relative">
+          <!-- Video background -->
+          <video autoplay loop muted class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+            <source src="video/videoBaner.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="mb-5 text-sm text-center">
+            Hãy liên hệ với chúng tôi bằng biểu mẫu ở bên dưới để nhận được tư vấn và giải đáp các thắc mắc ngay nhé!
+          </div>
+          <div class="mb-5 uppercase text-2xl text-center">
+            Biểu mẫu đặt câu hỏi
+          </div>
+          <div class="w-full flex justify-center flex-col items-center">
+            <div class="w-[50%] mb-4">
+              <label class="block text-sm font-medium">Họ và tên:</label>
+              <div class="mt-2">
+                <input type="text" class="text-black mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                  invalid:border-pink-500 invalid:text-pink-600
+                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                " placeholder="Nhập tên của bạn" />
+              </div>
+            </div>
+
+            <div class="w-[50%] mb-4">
+              <label class="block text-sm font-medium">Địa chỉ email:</label>
+              <div class="mt-2">
+                <input type="email" class="text-black mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                  invalid:border-pink-500 invalid:text-pink-600
+                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                " placeholder="Nhập email của bạn" />
+              </div>
+            </div>
+
+            <div class="w-[50%] mb-4">
+              <label class="block text-sm font-medium">Lời nhắn:</label>
+              <div class="mt-2">
+                <textarea class="text-black mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                invalid:border-pink-500 invalid:text-pink-600
+                focus:invalid:border-pink-500 focus:invalid:ring-pink-500 resize-none
+              " placeholder="Nhập lời nhắn của bạn" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="w-[50%] mt-3">
+              <button
+                class="relative overflow-hidden text-black uppercase font-medium px-4 py-2 bg-white group w-[150px]  rounded-full group-hover:block group-hover:animate-fadeIn">
+                <span class="relative z-10">Gửi</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <br>
+      </main>
+      <hr>
+      <div class="flex justify-center">
+        <footer class=" grid grid-cols-1 p-2 lg:grid-cols-4 md:grid-cols-2 gap-8 lg:gap-4 h-[150px] w-[95%]">
+          <div class="text-black flex flex-col items-center md:items-start">
+            <div class="uppercase text-xl">
+              Về chúng tôi
+            </div>
+            <div class="text-sm flex flex-col ml-0">
+              <a href="">--Giới thiệu</a>
+              <a href="">--Điều khoản sử dụng</a>
+              <a href="">--Chính sách bảo mật</a>
+              <a href="">--Tin tức</a>
+              <a href="">--Liên hệ</a>
+            </div>
+          </div>
+
+          <div class="text-black flex flex-col items-center md:items-start">
+            <div class="uppercase text-xl">
+              Về chúng tôi
+            </div>
+            <div class="text-sm flex flex-col ml-0">
+              <a href="">--Giới thiệu</a>
+              <a href="">--Điều khoản sử dụng</a>
+              <a href="">--Chính sách bảo mật</a>
+              <a href="">--Tin tức</a>
+              <a href="">--Liên hệ</a>
+            </div>
+          </div>
+
+          <div class="text-black flex flex-col items-center md:items-start">
+            <div class="uppercase text-xl">
+              Khách hàng
+            </div>
+            <div class="text-sm flex flex-col">
+              <a href="">--Hướng dẫn mua hàng</a>
+              <a href="">--Chính sách đổi trả</a>
+              <a href="">--Chính sách bảo hành</a>
+              <a href="">--Hướng dẫn chọn size</a>
+            </div>
+          </div>
+          <div class="text-black flex flex-col items-center md:items-start">
+            <div class="uppercase text-xl">
+              Trang mạng xã hội
+            </div>
+            <div class="text-sm flex flex-col">
+              <a href="" class="flex justify-start items-center gap-2">
+                <i class="bi bi-facebook text-2xl"></i>
+                facebook
+              </a>
+              <a href="" class="flex justify-start items-center gap-2">
+                <i class="bi bi-tiktok text-2xl"></i>
+                tiktok
+              </a>
+            </div>
+          </div>
+
+          <div class="text-black flex justify-center md:justify-start space-x-4 items-center md:items-start">
+            <!-- Div chứa ảnh -->
+            <div
+              class="w-[100px] h-[100px] bg-[url('/img/icon/logoshop.png')] bg-cover bg-center flex justify-center items-center">
+              <!-- Nếu cần thêm nội dung vào đây -->
+            </div>
+
+            <!-- Div chứa văn bản -->
+            <div class="basis-1/2 text-sm">
+              Đ/c: <br> Gần UBND xã Liên Nghĩa 200m
+
+            </div>
+          </div>
+        </footer>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- end rooot -->
+</body>
+
 </html>
