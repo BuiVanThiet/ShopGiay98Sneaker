@@ -1,0 +1,11 @@
+{
+  "scripts": {
+  "build:css": "tailwindcss -i ./src/tailwind.css -o ./public/css/tailwind.css --watch",
+  "start:dev": "live-server public"
+},
+
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "tailwindcss": "^3.4.16"
+  }
+}
